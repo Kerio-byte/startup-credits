@@ -1,0 +1,96 @@
+schema_version: sourcey.entity-authoring/v1alpha1
+entity:
+  entity_id: ent_01m5hdygz4v47z7rdt0c8h8d9w
+  slug: binadox
+  slug_aliases: []
+  name: Binadox
+  domains:
+    - value: binadox.com
+      role: primary
+      valid_from: '2026-10-21T00:00:00.000Z'
+  category: finance-accounting
+profile:
+  summary: Binadox helps organizations track and optimize cloud infrastructure and SaaS subscription spending.
+  description: Binadox provides cloud cost analysis, rightsizing, SaaS license optimization, renewal tracking and shadow IT discovery.
+  links:
+    site: https://www.binadox.com/
+sources:
+  - source_id: src_509fe77122935274197e4ddd05144a1ac5967f976ae13136a685d94373189fe7
+    url: https://www.binadox.com/startup-program/
+programs:
+  - program_id: prg_01m5hdygz4qdr5kmprn4wbyk4f
+    program_slug: startup-program
+    program_slug_aliases: []
+    title: Binadox Startup Program
+    summary: Binadox gives qualifying early-stage startups a free year of its Premium cloud and SaaS spend management plan.
+    source_ids:
+      - src_509fe77122935274197e4ddd05144a1ac5967f976ae13136a685d94373189fe7
+offers:
+  - offer_id: off_01m5hdygz41dggbf16nkdqxy3f
+    program_id: prg_01m5hdygz4qdr5kmprn4wbyk4f
+    offer_slug: startup-tier-free-year
+    offer_slug_aliases: []
+    title: Premium free for 12 months
+    summary: Eligible independent startups receive 12 months of Binadox Premium free, a $5,988 value, with unlimited cloud accounts, SaaS applications and seats. Activation requires a payment card; Premium then renews at $499/month unless cancelled.
+    description: The offer is limited to one per company and is non-transferable. There is no automatic extension. After the free year, the account continues on Binadox Premium at $499/month unless cancelled beforehand. Renewal reminders are sent 60, 30 and 7 days in advance.
+    lifecycle:
+      status: active
+      effective_from: '2026-10-21T00:00:00.000Z'
+    economics:
+      consideration:
+        kind: none
+      benefits:
+        - benefit_id: ben_startup_tier
+          description: Premium access at no charge for 12 months, with unlimited cloud accounts, SaaS applications and team seats, a $5,988 value.
+          kind: free-service
+          service: Binadox Premium
+          duration:
+            kind: exact
+            value: P12M
+    eligibility:
+      rule:
+        kind: all
+        rules:
+          - kind: manual
+            criterion_id: cri_independent_company
+            statement: The applicant must be an independent company.
+            reason: external-verification
+          - kind: predicate
+            criterion_id: cri_company_age
+            statement: The company must have been founded less than three years ago.
+            fact: company.age_years
+            operator: lt
+            value:
+              type: number
+              value: 3
+          - kind: predicate
+            criterion_id: cri_funding
+            statement: The company must have raised less than USD 5 million.
+            fact: company.funding_usd
+            operator: lt
+            value:
+              type: number
+              value: 5000000
+          - kind: manual
+            criterion_id: cri_website_email
+            statement: The company must have a working website and a corporate email domain.
+            reason: external-verification
+          - kind: manual
+            criterion_id: cri_excluded_businesses
+            statement: Agencies, consultancies and resellers are not eligible.
+            reason: external-verification
+          - kind: manual
+            criterion_id: cri_vendor_approval
+            statement: Binadox manually reviews and approves each application.
+            reason: vendor-discretion
+    roles:
+      terms_authority_entity_id: ent_01m5hdygz4v47z7rdt0c8h8d9w
+      access_operator_entity_id: ent_01m5hdygz4v47z7rdt0c8h8d9w
+    access:
+      availability: public
+      method: form
+      url: https://www.binadox.com/startup-program/
+      instructions: Apply through the vendor's Startup Program form. Binadox replies within one business day. After approval, add a valid payment card to activate. Cancel before the free year ends to avoid the subsequent Premium subscription charge.
+    terms_url: https://www.binadox.com/startup-program/
+    source_ids:
+      - src_509fe77122935274197e4ddd05144a1ac5967f976ae13136a685d94373189fe7
