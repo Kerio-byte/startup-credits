@@ -7,7 +7,7 @@ entity:
   domains:
     - value: binadox.com
       role: primary
-      valid_from: '2026-10-22T09:35:00.000Z'
+      valid_from: '2026-10-21T00:00:00.000Z'
   category: finance-accounting
 profile:
   summary: Binadox helps organizations track and optimize cloud infrastructure and SaaS subscription spending.
@@ -35,7 +35,7 @@ offers:
     description: The offer is limited to one per company and is non-transferable. There is no automatic extension. After the free year, the account continues on Binadox Premium at $499/month unless cancelled beforehand. Renewal reminders are sent 60, 30 and 7 days in advance.
     lifecycle:
       status: active
-      effective_from: '2026-10-22T09:35:00.000Z'
+      effective_from: '2026-10-21T00:00:00.000Z'
     economics:
       consideration:
         kind: none
