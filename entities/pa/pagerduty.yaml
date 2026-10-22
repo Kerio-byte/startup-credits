@@ -1,0 +1,85 @@
+schema_version: sourcey.entity-authoring/v1alpha1
+entity:
+  entity_id: ent_01m5hd1352nwabqw9t5695g6sd
+  slug: pagerduty
+  slug_aliases: []
+  name: PagerDuty
+  domains:
+    - value: pagerduty.com
+      role: primary
+      valid_from: 2026-10-22T09:20:00.000Z
+  category: observability
+profile:
+  summary: PagerDuty is an AI-powered operations platform that helps engineering teams detect, respond to, and resolve incidents across the full incident lifecycle.
+  description: PagerDuty is an operations platform for incident response, on-call management, and automated remediation across monitoring, ITSM, and chat tools.
+  links:
+    site: https://www.pagerduty.com/
+sources:
+  - source_id: src_3954523717f8c8829c0dc156d344d7d4373d6619e4558b1d4024a0a500e6397e
+    url: https://www.pagerduty.com/startups/
+  - source_id: src_41711a6e15b33426e376b53a3ea81380a4cb24e0c05852e748f5002fd4e226f1
+    url: https://www.pagerduty.com/
+programs:
+  - program_id: prg_01m5hd1352hdx6x983h4c4ksjw
+    program_slug: pagerduty-for-startups
+    program_slug_aliases: []
+    title: PagerDuty for Startups
+    summary: PagerDuty for Startups gives eligible new customers at Seed, Series A, or Series B six months of AI-Powered Operations at no cost.
+    source_ids:
+      - src_3954523717f8c8829c0dc156d344d7d4373d6619e4558b1d4024a0a500e6397e
+offers:
+  - offer_id: off_01m5hd1352w6r7tfhh9nd1y9r4
+    program_id: prg_01m5hd1352hdx6x983h4c4ksjw
+    offer_slug: six-months-ai-powered-operations-free
+    offer_slug_aliases: []
+    title: 6 months of AI-Powered Operations free
+    summary: Eligible new PagerDuty customers at Seed, Series A, or Series B receive six months of AI-Powered Operations free, including 20 seats, 20,000 events, and 1,000 AI actions.
+    lifecycle:
+      status: active
+      effective_from: 2026-10-22T09:20:00.000Z
+    economics:
+      benefits:
+        - benefit_id: ben_free_period
+          description: Six months of AI-Powered Operations at no cost, including 20 seats, 20,000 events, and 1,000 AI actions
+          kind: free-service
+          service: PagerDuty AI-Powered Operations
+          duration:
+            kind: exact
+            value: P6M
+      consideration:
+        kind: none
+        description: No credit card and no sales call required.
+    eligibility:
+      rule:
+        kind: all
+        rules:
+          - criterion_id: cri_01
+            fact: company.is_current_customer
+            kind: predicate
+            operator: eq
+            statement: The applicant is a new PagerDuty customer.
+            value:
+              type: boolean
+              value: false
+          - criterion_id: cri_02
+            fact: company.stage
+            kind: predicate
+            operator: in
+            statement: The startup is at Seed, Series A, or Series B funding stage.
+            value:
+              type: string-set
+              values:
+                - seed
+                - series-a
+                - series-b
+    roles:
+      terms_authority_entity_id: ent_01m5hd1352nwabqw9t5695g6sd
+      access_operator_entity_id: ent_01m5hd1352nwabqw9t5695g6sd
+    access:
+      availability: public
+      method: form
+      url: https://www.pagerduty.com/startups/
+      instructions: Select "See if you qualify" on the PagerDuty for Startups page and submit the form with work email, company name, funding stage, and country.
+    terms_url: https://www.pagerduty.com/startups/
+    source_ids:
+      - src_3954523717f8c8829c0dc156d344d7d4373d6619e4558b1d4024a0a500e6397e
