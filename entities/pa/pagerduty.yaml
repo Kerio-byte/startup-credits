@@ -48,7 +48,6 @@ offers:
             value: P6M
       consideration:
         kind: none
-        description: No credit card and no sales call required.
     eligibility:
       rule:
         kind: all
@@ -79,7 +78,7 @@ offers:
       availability: public
       method: form
       url: https://www.pagerduty.com/startups/
-      instructions: Select "See if you qualify" on the PagerDuty for Startups page and submit the form with work email, company name, funding stage, and country.
+      instructions: Select "See if you qualify" on the PagerDuty for Startups page and submit the form with work email, company name, funding stage, and country. No credit card and no sales call required.
     terms_url: https://www.pagerduty.com/startups/
     source_ids:
       - src_3954523717f8c8829c0dc156d344d7d4373d6619e4558b1d4024a0a500e6397e
